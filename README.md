@@ -1,7 +1,7 @@
 # DynamicalSystems.jl
 
 A collection of Julia functions that produce the systems of ODEs for various dynamical systems.
-The results of these functions are designed to be used as inputs for the [RungeKutta.jl](https://github.com/timothyrenner/RungeKutta.jl") package.
+The results of these functions are designed to be used as inputs for the [RungeKutta.jl](https://github.com/timothyrenner/RungeKutta.jl) package.
 
 ## Setup
 
