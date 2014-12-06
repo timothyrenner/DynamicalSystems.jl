@@ -37,7 +37,7 @@ end #Close simpleHarmonicOscillator.
 # Returns: An array of two functions defining the Duffing oscillator system.
 function duffingOscillator(delta::FloatingPoint, gamma::FloatingPoint;
     alpha::FloatingPoint=1.0, beta::FloatingPoint=-1.0,
-    omega::FloatingPoint=1)
+    omega::FloatingPoint=1.0)
 
     return [(t,x) -> x[2],
      (t,x) -> (gamma*sin(omega*t) -
