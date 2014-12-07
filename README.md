@@ -60,3 +60,19 @@ duffingOscillator(delta, gamma; alpha=1.0, beta=-1.0, omega=1.0)
  where `delta` is the damping term, `gamma` is the driving amplitude, `alpha` is the stiffness, `beta` is the restoring force non-linearity, and `omega` is the driving force frequency.
  
  Read more about the Duffing oscillator [here](http://en.wikipedia.org/wiki/Duffing_equation). 
+ 
+### `lorenzAttractor`
+
+The Lorenz attractor system of equations is
+
+![lorenzAttractor](doc/equations/lorenzAttractor.png)
+
+The function signature is
+
+```julia
+lorenzAttractor(sigma, rho, beta)
+```
+
+where `sigma`, `rho`, and `beta` are the corresponding terms in the system of equations.
+
+Read more about the Lorenz attractor [here](http://en.wikipedia.org/wiki/Lorenz_system).

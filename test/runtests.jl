@@ -38,3 +38,19 @@ truth_test2 = [3.5, 1.8132499651621083];
 answer_test2 = map(fe -> fe(t_test2, x_test2), functions_test2);
 
 @test_approx_eq answer_test2 truth_test2
+
+# Test 3: lorenzAttractor.
+
+sigma_test3 = 0.25;
+rho_test3 = 0.5;
+beta_test3 = 0.75;
+t_test3 = 0.0;
+x_test3 = [0.55; 0.35; 0.15];
+
+functions_test3 = lorenzAttractor(sigma_test3, rho_test3, beta_test3);
+
+# Validate the results of the functions.
+truth_test3 = [-0.05, -0.15749999999999, 0.08];
+answer_test3 = map(fe -> fe(t_test3, x_test3), functions_test3);
+
+@test_approx_eq answer_test3 truth_test3

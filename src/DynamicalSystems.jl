@@ -47,6 +47,26 @@ function duffingOscillator(delta::FloatingPoint, gamma::FloatingPoint;
 
 end #Close duffingOscillator.
 
-export harmonicOscillator, duffingOscillator
+# Creates the functions for a Lorenz attractor.
+#
+# x' = sigma (y - x)
+# y' = x (rho - z) - y
+# z' = x y - beta z
+#
+# Args:
+#   sigma: The sigma parameter of the system.
+#   rho: The rho parameter of the system.
+#   beta: The beta parameter of the system.
+#
+# Returns: An array of three function defining the Lorenz attractor system.
+function lorenzAttractor(sigma::FloatingPoint, rho::FloatingPoint,
+    beta::FloatingPoint)
+
+    return [(t,x) -> sigma*(x[2] - x[1]),
+            (t,x) -> x[1]*(rho - x[3]) - x[2],
+            (t,x) -> x[1]*x[2] - beta*x[3]];
+end
+
+export harmonicOscillator, duffingOscillator, lorenzAttractor
 
 end # module
