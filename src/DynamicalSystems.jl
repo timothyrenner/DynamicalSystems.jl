@@ -12,9 +12,9 @@ module DynamicalSystems
 #   omega: The driving force frequency (default: 1.0).
 #
 # Returns: An array of two functions defining the harmonic oscillator system.
-function harmonicOscillator(omega0::FloatingPoint;
-    beta::FloatingPoint=0.0, gamma::FloatingPoint=0.0,
-    omega::FloatingPoint=1.0)
+function harmonicOscillator(omega0::AbstractFloat;
+    beta::AbstractFloat=0.0, gamma::AbstractFloat=0.0,
+    omega::AbstractFloat=1.0)
 
     return [(t,x) -> x[2],
             (t,x) -> (gamma*sin(omega*t) -
@@ -35,9 +35,9 @@ end #Close simpleHarmonicOscillator.
 #   omega: The driving force frequency (default: 1.0).
 #
 # Returns: An array of two functions defining the Duffing oscillator system.
-function duffingOscillator(delta::FloatingPoint, gamma::FloatingPoint;
-    alpha::FloatingPoint=-1.0, beta::FloatingPoint=1.0,
-    omega::FloatingPoint=1.0)
+function duffingOscillator(delta::AbstractFloat, gamma::AbstractFloat;
+    alpha::AbstractFloat=-1.0, beta::AbstractFloat=1.0,
+    omega::AbstractFloat=1.0)
 
     return [(t,x) -> x[2],
      (t,x) -> (gamma*sin(omega*t) -
@@ -59,8 +59,8 @@ end #Close duffingOscillator.
 #   beta: The beta parameter of the system.
 #
 # Returns: An array of three function defining the Lorenz attractor system.
-function lorenzAttractor(sigma::FloatingPoint, rho::FloatingPoint,
-    beta::FloatingPoint)
+function lorenzAttractor(sigma::AbstractFloat, rho::AbstractFloat,
+    beta::AbstractFloat)
 
     return [(t,x) -> sigma*(x[2] - x[1]),
             (t,x) -> x[1]*(rho - x[3]) - x[2],
